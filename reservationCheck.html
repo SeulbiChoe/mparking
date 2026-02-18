@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>최슬비 - 예약 확인하기</title>
+  <link rel="stylesheet" href="./css/style.css">
+      <link rel="icon" href="../assets/images/parking/favicon.ico" />
+    <link rel="stylesheet" href="../assets/css/parking_style_v2.css?v=251224">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/i18n/jquery-ui-i18n.min.js"></script>
+</head>
+<body>
+    <div class="skip-nav">
+        <a href="#header">헤더 바로가기</a>
+        <a href="#main">본문 바로가기</a>
+        <a href="#footer">푸터 바로가기</a>
+    </div>
+    <form  name="frm" id="frm" method="post" action="valet_cancel.aspx">
+    <div id="wrap">
+        <header id="header">
+            <div class="nav-wrap">
+                <nav>
+                <div class="header-top">
+                <div class="overlay"></div>
+                <button class="open-btn" type="button"><img src="../assets/images/parking/ic_hamburger.png" alt="햄버거 메뉴 이미지"></button>
+                <a href="./main.html" class="logo"><img src="./img/logo.png" alt="맥서브 로고"></a>
+                <button onclick="document.location.href='tel:1551-6778'" class="call-btn" type="button"><img src="../assets/images/parking/ic_phone.png" alt="전화 이미지"></button>
+                </div>
+                <div class="mo-menu">
+                <button class="close-btn"><img src="../assets/images/parking/ic_close.png" alt="메뉴 닫기 이미지"></button>
+                <ul>
+                <li><a href="./main.html/">서비스 소개</a></li>
+                <li><a href="#section2">이용방법</a></li>
+                <li><a href="./reservation.html">예약하기</a></li>
+                <li><a href="./reservationCheck.html" class="active">예약 확인하기</a></li>
+                <li><a href="./customer-feedback">고객문의</a></li>
+                <!-- <li><a href="../valet-faq/">FAQ</a></li> -->
+                </ul>
+                <div class="header-btm">
+                <div class="header-btm__info">
+                    <a href="">이용약관</a>
+
+                    <a href="">개인정보처리방침</a>
+                    <p>Copyright(C) MAXERVE. All Rights Reserved.</p>
+                </div>
+                <div class="header-btm__address">
+                    <address>㈜맥서브 | 서울 강남구 영동대로 85길 28 성원타워</address>
+                </div>
+                </div>
+                </div> <!-- mo-menu -->
+                <div class="dt-menu">
+                    <ul>
+                <li><a href="./main.html/">서비스 소개</a></li>
+                <li><a href="#section2">이용방법</a></li>
+                <li><a href="./reservation.html">예약하기</a></li>
+                <li><a href="./reservationCheck.html" class="active">예약 확인하기</a></li>
+                <li><a href="./customer-feedback">고객문의</a></li>
+                <!-- <li><a href="../valet-faq/">FAQ</a></li> -->
+                </ul>
+                </div>
+                </nav>
+            </div>
+        </header>
+        <main id="main">
+            <section class="reservation reservation-check section-wrap">
+                <div class="title">
+                    <h1>예약 확인하기</h1>
+                    <p>가장 최근의 사전예약 (예약 취소 제외) 건을 조회합니다. 사전예약이 종료되었을 경우 조회되지 않습니다.</p>
+                </div>
+                <div class="check-form">
+                    <div class="form-item">
+                        <label for="">차량번호</label>
+                        <input type="text" id="car_no" name="car_no" placeholder="예약하신 차량번호를 입력해주세요." required>
+                    </div>
+                    <div class="form-item">
+                        <label for="">예약번호</label>
+                        <input type="text" id="keymain" name="keymain" placeholder="알림톡으로 받으신 예약번호를 입력해주세요." required>
+                    </div>
+                </div>
+                <div class="history">
+                    <asp:Label ID="Label1" runat="server" Font-Overline="False"></asp:Label>
+                   <button id="cancel" name="cancel" class="cancel-btn" type="button" style="display:none;" >예약취소</button>
+                </div>
+
+                <div>
+                    <button type="submit" id="submit" name="submit" class="search-btn" >사전예약 조회하기</button>
+                </div>
+            </section>
+        </main>
+        <footer id="footer">
+            <div class="footer-wrap">
+                <div>
+                    <a href="">이용약관</a>
+                    <a href="">개인정보처리방침</a>
+                    <p class="copyright">Copyright MAXERVE Co., Ltd. All rights reserved.</p>
+                    <address>㈜맥서브 | 서울 강남구 영동대로 85길 28 성원타워</address>
+                </div>
+                <div class="inquiry-call">
+                    <img src="../assets/images/parking/ic_customer-service.png" alt="고객문의 아이콘 이미지">
+                    <div class="text-wrap">
+                        <span>고객문의</span>
+                        <p>1551-6778</p>
+                        <p>운영시간 : 오전09시-오후06시</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    </form>
+    <script>        
+        //메뉴 스크립트
+        let body = document.querySelector("body");
+        let openBtn = document.querySelector("#header .open-btn");
+        let menuOverlay = document.querySelector("#header .overlay");
+        let menu = document.querySelector("#header .mo-menu");
+        let closeBtn = document.querySelector(".mo-menu .close-btn");
+        openBtn.addEventListener("click", (e)=>{
+        e.preventDefault();
+        menuOverlay.style.display = 'block';
+        menu.style.left = '0';
+        body.style.overflowY = 'hidden';
+        })
+
+        closeBtn.addEventListener("click", (e)=>{
+        e.preventDefault();
+        menuOverlay.style.display = 'none';
+        menu.style.left = '-100%';
+        body.style.overflowY = 'auto';
+        });
+
+        $(document).ready(function () {
+            let historyWrap = document.querySelector('.history');
+            document.getElementById('submit').onclick = function (e) {
+                e.preventDefault();
+                const carNo = $("#car_no").val().trim();
+                const keyMain = $("#keymain").val().trim();
+                // 비어있으면 alert
+                if (!carNo) {
+                    alert("차량번호를 입력해주세요.");
+                    $("#car_no").focus();
+                    return;
+                }
+                if (!keyMain) {
+                    alert("예약번호를 입력해주세요.");
+                    $("#keymain").focus();
+                    return;
+                }
+                historyWrap.classList.add("active");
+                $.ajax({
+                    type: "POST",
+                    url: "ajax_ins.aspx",
+                    data: {
+                        car_no: $("#car_no").val(),
+                        keymain: $("#keymain").val()
+                    },
+                    success: function (data) {
+                        $("#Label1").html(data);                      
+                        $("#cancel").show();
+                    },
+                    error: function (request, status, error) {
+                        alert('Error:' + status);
+                    }
+                });
+            }
+            /*
+            $("#cancel").onclick = function (e) {
+
+                if (confirm("예약을 취소하시겠습니까?")) {
+                    document.getElementById("frm").submit();
+                }
+            }
+            */
+        });
+
+     
+        // let cancelBtn = document.querySelector(".cancel-btn");
+        // cancelBtn.addEventListener("click", ()=>{
+        //     if (confirm("예약을 취소하시겠습니까?")) {
+        //         document.getElementById("frm").submit();
+        //     }
+        // })
+        
+
+        let cancelBtn = document.querySelector(".cancel-btn");
+cancelBtn.addEventListener("click", () => {
+    if (confirm("예약을 취소하시겠습니까?")) {
+        HTMLFormElement.prototype.submit.call(document.getElementById("frm"));
+    }
+});
+    
+        </script>
+</body>
+</html>

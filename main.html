@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>최슬비 - 맥서브 주차대행</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/i18n/jquery-ui-i18n.min.js"></script>
+</head>
+<body style="overflow-y: hidden;">
+    <div class="skip-nav">
+        <a href="#header">헤더 바로가기</a>
+        <a href="#main">본문 바로가기</a>
+        <a href="#footer">푸터 바로가기</a>
+    </div>
+    <form id="form1" runat="server">
+    <div id="wrap">
+        <div class="first-popup-layer">
+            <!-- <div class="popup-wrap"> -->
+                <div class="inner popup-type3">
+                    <div>
+                        <strong>*프리미엄 주차대행</strong>
+                        <div>
+                            <p>- 카드사 무료 1회 인증 + 신용 결제 : 가능</p>
+                            <p>- 동일 카드사 무료 2회 인증 처리 : 불가능</p>
+                            
+                            <p>- 2개 이상에 카드사 무료로 2회 인증 처리 : 불가능</p>
+                        </div>
+                    </div>
+                    <button type="button" class="first-popup-close-btn">확인</button>
+                </div>
+                <div class="inner popup-type2">
+                    <div>
+                        <strong>2025년 12월 하이파킹예약 고객중 <br> 1월에 출차하시는 고객 안내</strong>
+                        <div>
+                            <span>인도장소 : 하늘정원인근외곽주차장</span>
+                            <p>입국하시고 출국장 3층 6~8게이트에서 셔틀(맥서브)을 <br> 이용하셔서 인도장소로 이동하시고 차량을 수령하시면 됩니다.</p>
+                        </div>
+                    </div>
+                    <button type="button" class="first-popup-close-btn">확인</button>
+                </div>
+                <div class="inner popup-type1"><!-- 팝업 추가시 inner 클래스 영역 추가하기 -->
+                    <div>
+                        <strong>셔틀버스 이용안내 (24시간 상시 운행)</strong>
+                        <div>
+                            <span> ● 피크타임(10분 간격)</span>
+                            <p>04:00~07:00</p>
+                            <p>16:00~19:00</p>
+                        </div>
+                        <div>
+                            <span> ● 일반시간대(15분 간격)</span>
+                            <p>07:00~16:00</p>
+                            <p>19:00~04:00</p>
+                        </div>
+                        <div><span>이동 소요시간 약 10분</span></div>
+                    </div>
+                    <button type="button" class="first-popup-close-btn">확인</button>
+                </div>
+            <!-- </div> -->
+        </div>
+        <header id="header">
+            <div class="nav-wrap">
+                <nav>
+                <div class="header-top">
+                <div class="overlay"></div>
+                <button class="open-btn" type="button"><img src="./img/ic_hamburger.png" alt="햄버거 메뉴 이미지"></button>
+                <a href="./main.html" class="logo"><img src="./img/logo.png" alt="맥서브 로고"></a>
+                <button onclick="document.location.href='tel:1551-6778'" class="call-btn" type="button"><img src="./img/ic_phone.png" alt="전화 이미지"></button>
+                </div>
+                <div class="mo-menu">
+                <button class="close-btn"><img src="./img/ic_close.png" alt="메뉴 닫기 이미지"></button>
+                <ul>
+                <li><a href="./main.html/" class="active">서비스 소개</a></li>
+                <li><a href="#section2">이용방법</a></li>
+                <li><a href="./reservation.html">예약하기</a></li>
+                <li><a href="./reservationCheck.html">예약 확인하기</a></li>
+                <li><a href="./customer-feedback">고객문의</a></li>
+                <!-- <li><a href="./valet-faq/">FAQ</a></li> -->
+                </ul>
+                <div class="header-btm">
+                <div class="header-btm__info">
+                    <a href="">이용약관</a>
+                    <a href="">개인정보처리방침</a>
+                    <p>Copyright(C) MAXERVE. All Rights Reserved.</p>
+                </div>
+                <div class="header-btm__address">
+                    <address>㈜맥서브 | 인천 중구 운서동 2848-13</address>
+                </div>
+                </div>
+                </div> <!-- mo-menu -->
+                <div class="dt-menu">
+                    <ul>
+                <li><a href="./main.html/" class="active">서비스 소개</a></li>
+                <li><a href="#section2">이용방법</a></li>
+                <li><a href="./reservation.html">예약하기</a></li>
+                <li><a href="./reservationCheck.html">예약 확인하기</a></li>
+                <li><a href="./customer-feedback">고객문의</a></li>
+                <!-- <li><a href="../valet-faq/">FAQ</a></li> -->
+                </ul>
+                </div>
+                </nav>
+            </div>
+        </header>
+        <main id="main">
+            <section class="section01">
+                <h1>인천공항 제1여객터미널 공식 주차대행</h1>
+                <p>주차대행 공식업체(맥서브)의 접수요원은<br>공식 주차대행이 표기된 유니폼을 착용하고 있습니다.</p>
+            
+                <div class="fee">
+                    <h2>서비스 이용요금</h2>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>서비스</th>
+                            <th colspan="2">구분</th>
+                            <th>요금</th>
+                            <th>결제방법</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td rowspan="3">주차대행</td>
+                            <td rowspan="2">일반 주차대행</td>
+                            <td>일반</td>
+                            <td>20,000원</td>
+							<td rowspan="2">후불결제(키오스크)</td>
+                        </tr>
+                        <tr>
+                            <td>경차,장애인,국가유공자</td>
+                            <td>10,000원</td>
+							
+                        </tr>
+                        <tr>
+                            <td>프리미엄 주차대행</td>
+                            <td>프리미엄</td>
+                            <td>40,000원</td>
+                            <td>후불결제</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5">※ 주차료는 <span>장기주차요금</span>으로 정산해주세요.
+                            <br>
+                            <a href="https://www.airport.kr/ap_ko/969/subview.do" target="_blank">인천공항 주차 요금 안내</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div>
+                        <p class="info-desc" style="margin-bottom: 10px; padding-top: 20px;"><span>접수 및 인도장소</span></p>
+						<div class="place">
+							<div class="normal-place">
+								<h3>일반</h3>
+								<div>
+									<ul>
+										<li><span>접수장소 및 인도장소</span>인천 중구 운서동 2848-13</li>
+										<li><span>보관장소</span>하늘정원 인근의 주차대행 전용 외곽 주차장
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="premiun-place">
+								<h3>프리미엄</h3>
+								<div>
+									<ul>
+										<li><span>접수장소 및 인도장소</span>인천공항 1층 단기주차장 c1 c2 구역</li>
+										<li><span>보관장소</span>하늘정원 인근의 주차대행 전용 외곽 주차장
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+                        <p class="info-desc"><span>24시간 연중무휴</span></p>
+                        <p class="info-title">보관장소</p>
+                        <p class="info-desc">하늘정원 인근의 주차대행 전용 외곽주차장</p>
+						<p class="sub-desc" style="padding: 0;">
+                            <span>아시아나 항공 2026년 1월 14일 항공사 제2터미널로 변경예정 </span>
+                        </p>
+
+                    </div>
+                </div>
+                <div class="reservation-btns">
+                    <a href="../reservation/">사전예약 신청</a>
+                    <a href="../reservationCheck/">예약 확인하기</a>
+                </div>
+            </section><!-- section01 -->
+            <section class="section02" id="section2">
+                <h2 class="section-title">이용방법</h2>
+                <div class="parking-info">
+                <h3>주차대행 일반 서비스</h3>
+                <p class="parking-info__desc">
+                주차대행 공식업체(맥서브)의 접수요원은 공식 주차대행이 표기된 유니폼을 착용하고 있습니다.
+				<br> 외곽주차장(인천 중구 운서동 2848-13) 차량 인도.인수
+				<br> 인천공항 1터미널 간 셔틀운행
+                </p>
+                <div class="route-guide">
+                    <div class="guide-item popup-img">
+                        <h4>오시는 길</h4>
+                        <div class="text-wrap">
+                            <p><img src="./img/ic_pin.png" alt="주소 핀 이미지">인천광역시중구운서동2848-13</p>
+                            <p class="detail-text">인천국제공항고속도로이용공항신도시분기점(JC) 통과후 공항로방향 진입</p>
+                        </div>
+                        <img src="./img/normal_guide_1.png" data-img="./img/normal_guide_1.png" alt="일반서비스 오시는 길 이미지">
+                    </div>
+                    <div class="guide-item popup-img">
+                        <h4>상세 위치</h4>
+                        <div class="text-wrap">
+                            <p class="detail-text">을왕·왕산해수욕장, 무의, 용유 방면으로 우회전 후 약800m</p>
+                        </div>
+                        <img src="./img/normal_guide_2.png" data-img="./img/normal_guide_2.png" alt="일반서비스 상세 위치 이미지">
+                    </div>
+                </div>
+                <div class="process-wrap">
+                    <div class="parking-info__process">
+                        <div class="img-wrap">
+                            <img src="./img/normal_parking2.png" alt="하늘정원 방면 진입 이미지">
+                        </div>
+                        <span class="process-num">1</span>
+                        <h4>을왕·왕산해수욕장,무의,용유 방면</h4>
+                        <p>을왕·왕산해수욕장,무의,용유 방면으로 <br> 우회전하여 하늘정원 방면으로 진입합니다.</p>
+                    </div>
+                    <div class="parking-info__process">
+                        <div class="img-wrap"><img src="./img/normal_parking1.png" alt="주차장 진입 이미지"></div>
+                        <span class="process-num">2</span>
+                        <h4>주차장 진입</h4>
+                        <p>노상주차장으로 입차합니다</p>
+                    </div>
+                    <div class="parking-info__process">
+                        <div class="img-wrap"><img src="./img/receive-phone1.jpg" alt="차량인계 및 카카오톡 접수증 발송 이미지"></div>
+                        <span class="process-num">3</span>
+                        <h4>차량인계 및 카카오톡 접수증 발송</h4>
+                        <p>
+                        차량 인계 및 카카오톡 접수증을 받습니다.
+                        <br>
+                        *사전예약시 접수시간이 생략되어 빠르게 <br>이용하실 수 있습니다.
+                        </p>
+                    </div>
+                    <div class="parking-info__process">
+                        <div class="img-wrap"><img src="./img/bus.png" alt="출국장까지 셔틀버스 운행 이미지"></div>
+                        <span class="process-num">4</span>
+                        <h4> 출국장 셔틀버스 운행</h4>
+                        <p>
+                        노상주차장에서 공항3층 출국장까지 <span>셔틀버스 운행</span>
+                        <br>
+                        *운행시간 및 세부일정 추후 공지예정
+                        </p>
+                    </div>
+                </div>
+                <p class="notice">※ 인천국제공항 제1터미널 공식 주차대행 업체는 맥서브입니다. </p>
+                <p class="notice">※  비공식 사설 업체를 이용할 경우 예상치 못한 피해가 발생할 수 있으니, 각별한 주의를 부탁드립니다. </p>
+                <p class="notice">※ 호객인들이 차를 인수하여 공항 밖 주변주차장에 주차시키는 공항 주변 사설주차 이용으로 인한 피해 또는 손실은 책임지지 않습니다.</p>
+                <p class="notice notice--active">※ 노상주차장에서 공항3층 출국장까지 셔틀버스 운행(운행시간 및 세부일정 추후 공지예정)</p>
+                <p class="notice notice--active">※ 주차 요금을 결제 전에 반드시 &lt;주차대행료&gt;를 결제 해주십시오.
+                먼저 주차요금을 결제 할 경우 추가 주차요금이 발생합니다.</p>
+                <p class="notice notice--active">※ 인도장 이동방법 : T1 3층 중앙에서 셔틀 탑승</p>
+                </div>
+
+                <div class="parking-info premium-parking">
+                <h3>주차대행 프리미엄 서비스</h3>
+                <div class="route-guide">
+                    <div class="guide-item">
+                        <h4>오시는 길</h4>
+                        <div class="text-wrap">
+                            <p style="letter-spacing: -1px;"><img src="./img/ic_pin.png" alt="주소 핀 이미지">인천공항 1층 단기주차장 c구역</p>
+                            <p class="detail-text">인천공항 3층 출발층 진입 후 단기주차장 방향 이동</p>
+                        </div>
+                        <img src="./img/premium_parking1.png" alt="프리미엄서비스 오시는 길 이미지">
+                    </div>
+                </div>
+                <div class="process-wrap">
+                    <div class="parking-info__process">
+                        <div class="img-wrap">
+                            <img src="./img/premium_parking3.png" alt="하늘정원 방면 진입 이미지">
+                        </div>
+                        <span class="process-num">1</span>
+                        <h4>인천공항 3층 출발층 진입 후 <br> 단기주차장 방향 이동</h4>
+                        <p>인천공항 3층 출발층 진입 후 단기주차장 방향 이동합니다</p>
+                    </div>
+                    <div class="parking-info__process">
+                        <div class="img-wrap"><img src="./img/premium_parking4.png" alt="단기주차장 지상 C구역  이미지"></div>
+                        <span class="process-num">2</span>
+                        <h4>단기주차장 지상 C구역 내 프리미엄  <br> 전용 인도/인수장 </h4>
+                    </div>
+                    <div class="parking-info__process">
+                        <div class="img-wrap"><img src="./img/receive-phone1.jpg" alt="차량인계 및 카카오톡 접수증 발송 이미지"></div>
+                        <span class="process-num">3</span>
+                        <h4>차량인계 및 카카오톡 접수증 발송</h4>
+                        <p>
+                        차량 인계 및 카카오톡 접수증을 받습니다.
+                        <br>
+                        *사전예약시 접수시간이 생략되어 빠르게 <br>이용하실 수 있습니다.
+                        </p>
+                    </div>
+                </div>
+                <p class="notice">※ 인천국제공항 제1터미널 공식 주차대행 업체는 맥서브입니다. </p>
+                <p class="notice">※ 비공식 사설 업체를 이용할 경우 예상치 못한 피해가 발생할 수 있으니, 각별한 주의를 부탁드립니다.</p>
+                <p class="notice">※ 호객인들이 차를 인수하여 공항 밖 주변주차장에 주차시키는 공항 주변 사설주차 이용으로 인한 피해 또는 손실은 책임지지 않습니다.</p>
+                <p class="notice notice--active">※ 주차 요금을 결제 전에 반드시 &lt;주차대행료&gt;를 결제 해주십시오.
+                먼저 주차요금을 결제 할 경우 추가 주차요금이 발생합니다.</p>
+               
+                </div>
+
+				<div class="parking-info popup-img">
+					<h3 style="padding-bottom: 20px">실외 보관장소</h3>
+					<img style="max-width: 350px" src="./img/outside_parking_02.png" data-img="./img/outside_parking_02.png" alt="실외 보관장소 이미지">
+				</div>
+            </section><!-- section02 -->
+        </main>
+        <footer id="footer">
+            <div class="footer-wrap">
+                <div>
+                    <a href="">이용약관</a>
+                    <a href="">개인정보처리방침</a>
+                    <p class="copyright">Copyright MAXERVE Co., Ltd. All rights reserved.</p>
+                    <address>㈜맥서브 | 인천 중구 운서동 2848-13</address>
+                </div>
+                <div class="inquiry-call">
+                    <img src="./img/ic_customer-service.png" alt="고객문의 아이콘 이미지">
+                    <div class="text-wrap">
+                        <span>고객문의</span>
+                        <p>1551-6778</p>
+                        <p>운영시간 : 오전09시-오후06시</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- 이미지 모달창 -->
+        <div class="popup-layer">
+            <div class="popup-wrap">
+                <button type="button" class="popup-close-btn"><img src="./img/ic_close.png" alt="모달 닫기 이미지"></button>
+                <img class="popup-view" src="" alt="해당 팝업 이미지">
+            </div>
+        </div>
+    </div>
+    </form>
+    <script>        
+        //메뉴 스크립트
+        let body = document.querySelector("body");
+        let openBtn = document.querySelector("#header .open-btn");
+        let menuOverlay = document.querySelector("#header .overlay");
+        let menu = document.querySelector("#header .mo-menu");
+        let closeBtn = document.querySelector(".mo-menu .close-btn");
+        openBtn.addEventListener("click", (e)=>{
+        e.preventDefault();
+        menuOverlay.style.display = 'block';
+        menu.style.left = '0';
+        body.style.overflowY = 'hidden';
+        })
+
+        closeBtn.addEventListener("click", (e)=>{
+        e.preventDefault();
+        menuOverlay.style.display = 'none';
+        menu.style.left = '-100%';
+        body.style.overflowY = 'auto';
+        });
+
+        //페이지 스크롤 이동 - 이용방법
+        $(document).ready(function() {
+            function updateActiveMenu(hash) {
+                $('nav a').removeClass('active');
+                $('nav a[href*="' + hash + '"]').addClass('active');
+            }
+            
+            if(window.location.hash) {
+                var hash = window.location.hash;
+                var target = $(hash);
+                
+                if(target.length > 0) {
+                    updateActiveMenu(hash);
+                    
+                    setTimeout(function() {
+                        $('html, body').animate({
+                            scrollTop: target.offset().top - 120
+                        }, 500);
+                    }, 100);
+                }
+            }
+            
+            $('a[href^="#"]').on('click', function(e) {
+                var hash = $(this).attr('href');
+                var target = $(hash);
+                
+                if(hash !== '#' && target.length > 0) {
+                    e.preventDefault();
+                    updateActiveMenu(hash);
+                    
+                    $('html, body').animate({
+                        scrollTop: target.offset().top - 120
+                    }, 500, function() {
+                        history.pushState(null, null, hash);
+                    });
+                }
+            });
+        });
+
+        //팝업 이미지 띄우기 스크립트
+        document.addEventListener("DOMContentLoaded", () => {
+        let popupItems = document.querySelectorAll(".popup-img");
+        let popupLayer = document.querySelector(".popup-layer");
+        let popupWrap = document.querySelector(".popup-layer .popup-wrap");
+        let popupView = document.querySelector(".popup-layer  .popup-view");
+        let closePopupBtn = document.querySelector(".popup-layer .popup-close-btn");
+
+        const isPC = window.matchMedia("(pointer: fine)").matches;
+
+        if (isPC) {
+            popupItems.forEach(item => {
+                item.addEventListener("click", () => {
+                    const img = item.querySelector("img[data-img]");
+                    if (img && img.dataset.img) {
+                        popupView.src = img.dataset.img;
+                        popupLayer.classList.add("active");
+                        body.style.overflowY = 'hidden';
+                    }
+                });
+            });
+        }
+
+        closePopupBtn.addEventListener("click", () => {
+            popupLayer.classList.remove("active");
+            body.style.overflowY = 'auto';
+        });
+
+        // 배경 클릭 시 닫기
+        popupWrap.addEventListener("click", (e) => {
+            if (!e.target.closest(".popup-view")) {
+                popupLayer.classList.remove("active");
+                body.style.overflowY = 'auto';
+            }
+        });
+        });
+
+       //초반 알림 팝업 띄우기
+        let firstPopupLayer = document.querySelector(".first-popup-layer");
+        let firstPopupInnerList = document.querySelectorAll(".first-popup-layer .inner");
+
+        if (!location.hash) {
+            firstPopupLayer.classList.remove("hidden");
+            document.body.style.overflowY = "hidden";
+        } else {
+            firstPopupLayer.classList.add("hidden");
+            document.body.style.overflowY = "auto";
+        }
+
+        firstPopupInnerList.forEach(inner => {
+
+            let closeBtn = inner.querySelector(".first-popup-close-btn");
+            closeBtn.addEventListener("click", () => {
+                inner.classList.add("hidden");
+                let openedPopups = Array.from(
+                    document.querySelectorAll(".first-popup-layer .inner:not(.hidden)")
+                );
+                if (openedPopups.length === 0) {
+                    firstPopupLayer.classList.add("hidden");
+                    document.body.style.overflowY = "auto";
+                }
+            });
+        });
+
+        // ESC 키 닫기
+document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+
+    let openedPopups = Array.from(
+        document.querySelectorAll(".first-popup-layer .inner:not(.hidden)")
+    );
+
+    if (openedPopups.length === 0) return;
+
+    let topPopup = openedPopups[openedPopups.length - 1];
+    topPopup.classList.add("hidden");
+
+    // 닫기 전 기준으로 판단
+    if (openedPopups.length === 1) {
+        firstPopupLayer.classList.add("hidden");
+        document.body.style.overflowY = "auto";
+    }
+});
+    </script>
+</body>
+</html>
