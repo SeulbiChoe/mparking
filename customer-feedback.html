@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>최슬비 - 고객 문의</title>
+ <link rel="stylesheet" href="./css/style.css">
+     <link rel="icon" href="../assets/images/parking/favicon.ico" />
+    <link rel="stylesheet" href="../assets/css/parking_style_v2.css?v=251224">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/i18n/jquery-ui-i18n.min.js"></script>
+</head>
+<body>
+  <div class="skip-nav">
+    <a href="#header">헤더 바로가기</a>
+    <a href="#main">본문 바로가기</a>
+    <a href="#footer">푸터 바로가기</a>
+  </div>
+  <div id="wrap">
+    <header id="header" class="header">
+      <nav>
+          <div class="header__top">
+              <div class="header__overlay"></div>
+              <button class="header__open" type="button"><img src="./img/ic_hamburger.png" alt="햄버거 메뉴 이미지"></button>
+              <a href="./index.html" class="logo"><img src="./img/logo.png" alt="맥서브 로고"></a>
+              <button onclick="document.location.href='tel:1551-6778'" class="header__call" type="button"><img src="./img/ic_phone.png" alt="전화 이미지"></button>
+          </div>
+          <div class="header__mo-menu">
+          <button class="header__close"><img src="./img/ic_close.png" alt="메뉴 닫기 이미지"></button>
+          <ul class="header__nav">
+              <li><a href="./index.html">서비스 소개</a></li>
+              <li><a href="#section2">이용방법</a></li>
+              <li><a href="./reservation.html">예약하기</a></li>
+              <li><a href="./reservationCheck.html">예약 확인하기</a></li>
+              <li><a href="./customer-feedback.html" class="active">고객문의</a></li>
+          </ul>
+          <div class="header__btm">
+          <div class="header__info">
+              <a href="">이용약관</a>
+              <a href="">개인정보처리방침</a>
+              <p>Copyright(C) MAXERVE. All Rights Reserved.</p>
+          </div>
+          <div class="header__address">
+              <address>㈜맥서브 | 인천 중구 운서동 2848-13</address>
+          </div>
+          </div>
+          </div> <!-- mo-menu -->
+          <div class="header__dt-menu">
+              <ul class="header__nav">
+                  <li><a href="./index.html">서비스 소개</a></li>
+                  <li><a href="#section2">이용방법</a></li>
+                  <li><a href="./reservation.html">예약하기</a></li>
+                  <li><a href="./reservationCheck.html">예약 확인하기</a></li>
+                  <li><a href="./customer-feedback.html" class="active">고객문의</a></li>
+              </ul>
+          </div>
+      </nav>
+    </header>
+    <main id="main">
+        <section class="sec-wrap feedback">
+            <div class="title">
+                <h1>인천공항 주차대행 고객문의</h1>
+                <p><span>*</span>는 필수항목입니다.</p>
+            </div>
+            <div class="feedback__form">
+                <div class="form__item form__item--pc-third">
+                    <label for=""><span class="required">*</span>이름</label>
+                    <input type="text" id="client_name" name="client_name" placeholder="이름을 입력해주세요">
+                </div>
+                <div class="form__item form__item--pc-third">
+                    <label for=""><span class="required">*</span>고객 연락처</label>
+                    <input type="number" id="client_phone" name="client_phone" placeholder="숫자만 입력해주세요">
+                </div>
+                <div class="form__item form__item--pc-third">
+                    <label for="">이메일</label>
+                    <input type="text" id="client_email" name="client_email" placeholder="이메일을 입력해주세요">
+                </div>
+                <div class="form__item">
+                    <label for="">문의사항</label>
+                    <textarea maxlength="300" name="client_voc" id="client_voc" placeholder="작은 불편도 남겨주세요.
+정성껏 읽고 개선하겠습니다.
+(300자 이내)"></textarea>
+                </div>
+                <div class="form__item">
+                    <button type="submit" id="submit" class="submit-btn">접수하기</button>
+                </div>
+            </div>
+            <div class="feedback__privacy">
+                <p>고객님의 소중한 의견을 신속하게 처리하기 위해 최소한의 정보를수집합니다.</p>
+                <p>입력하지 않은 항목은 수집되지 않으며, 이름 연락처 등을 입력하지않으시면 익명으로 접수됩니다.</p>
+                <p>※ 익명 접수의 경우에도, 본 안내에 대한 동의는 반드시 필요합니다.</p>
+                <p>수집 항목: 이름, 연락처, 이메일, 차량번호 (입력된 경우에 한함)</p>
+                <p>이용 욕적: 접수 내용 확인 및 불편 사항 처리</p>
+                <p>보유 기간: 접수일로부터 최대 3개월 이내 파기</p>
+            </div>
+        </section>
+    </main>
+    <footer id="footer" class="footer">
+        <div class="footer__wrap">
+            <div>
+                <a href="">이용약관</a>
+                <a href="">개인정보처리방침</a>
+                <p class="copyright">Copyright MAXERVE Co., Ltd. All rights reserved.</p>
+                <address>㈜맥서브 | 인천 중구 운서동 2848-13</address>
+            </div>
+            <div class="footer__call">
+                <img src="./img/ic_customer-service.png" alt="고객문의 아이콘 이미지">
+                <div class="footer__call-text">
+                    <span>고객문의</span>
+                    <p>1551-6778</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+  </div>
+  <script>
+        document.getElementById('submit').onclick = function (e) {
+            e.preventDefault();
+            const client_name = $("#client_name").val().trim();
+            const client_phone = $("#client_phone").val().trim();
+            const client_email = $("#client_email").val().trim();
+            const client_voc = $("#client_voc").val().trim();
+            
+            // 비어있으면 alert
+            if (!client_name) {
+                alert("이름을 입력해주세요.");
+                $("#client_name").focus();
+                return;
+            }
+            if (!client_phone) {
+                alert("연락처를 입력해주세요.");
+                $("#client_phone").focus();
+                return;
+            }
+            // if (!client_email) {
+            //     alert("연락처를 입력해주세요.");
+            //     client_email.focus();
+            //     return;
+            // }
+            if (!client_voc) {
+                alert("문의사항을 입력해주세요.");
+                $("#client_voc").focus();
+                return;
+            }
+        }
+        //메뉴 스크립트
+        let body = document.querySelector("body");
+        let openBtn = document.querySelector(".header__open");
+        let menuOverlay = document.querySelector(".header__overlay");
+        let menu = document.querySelector(".header__mo-menu");
+        let closeBtn = document.querySelector(".header__mo-menu .header__close");
+        openBtn.addEventListener("click", (e)=>{
+        e.preventDefault();
+        menuOverlay.style.display = 'block';
+        menu.style.left = '0';
+        body.style.overflowY = 'hidden';
+        })
+
+        closeBtn.addEventListener("click", (e)=>{
+        e.preventDefault();
+        menuOverlay.style.display = 'none';
+        menu.style.left = '-100%';
+        body.style.overflowY = 'auto';
+        });
+  </script>
+</body>
+</html>
